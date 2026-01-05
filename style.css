@@ -251,7 +251,7 @@
 } */
 
 /* Small screens (mobile) */
-/* @media (max-width: 576px) {
+@media (max-width: 576px) {
   .preloader-logo {
     font-size: 40px;
     flex-direction: column;  
@@ -260,7 +260,7 @@
   .fire-icon {
     font-size: 28px;
   }
-} */
+}
 
 
 /* ================= FEATURED MODERN ================= */
