@@ -12,14 +12,18 @@ gsap.to(".preloader-logo", {
     // Scale down + move to navbar
     gsap.to(".preloader-logo", {
       scale: 0.4,
-      x: -window.innerWidth / 2 + 200,  // adjust left
-      y: -window.innerHeight / 2 + 40,  // adjust top
+      x: -window.innerWidth / 2 + 200,
+      y: -window.innerHeight / 2 + 40, 
       duration: 1,
       ease: "power2.inOut",
       onComplete: () => {
         // Hide preloader
         document.querySelector(".preloader").style.display = "none";
 
+        // ---------------- Hero Section ----------------
+        gsap.from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power3.out" });
+        gsap.from(".hero-subtitle", { y: 40, opacity: 0, delay: 0.3, duration: 1 });
+        gsap.from(".hero-buttons", { opacity: 0, scale: 0.8, delay: 0.6, duration: 0.8 });
 
 
       } // onComplete preloader
@@ -27,10 +31,6 @@ gsap.to(".preloader-logo", {
   }
 });
 
-// ---------------- Hero Section ----------------
-gsap.from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power3.out" });
-gsap.from(".hero-subtitle", { y: 40, opacity: 0, delay: 0.3, duration: 1 });
-gsap.from(".hero-buttons", { opacity: 0, scale: 0.8, delay: 0.6, duration: 0.8 });
 
 // Scroll arrow animation
 gsap.to(".scroll-arrow span", { y: 10, opacity: 0, duration: 1, repeat: -1, ease: "power1.inOut" });
@@ -43,7 +43,7 @@ gsap.to(".circle-img", {
     end: "bottom 60%",
     scrub: true
   },
-   y: -20,
+  y: -20,
   rotation: 360,
   ease: "none"
 });
