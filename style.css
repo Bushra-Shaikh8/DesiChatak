@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 :root {
   /* Background */
@@ -10,7 +14,7 @@
   --card-text: #f5f1ed;
 
   /* Main Colors */
-  --primary:  #b11226;
+  --primary: #b11226;
   --secondary: #1a0b0c;
   --muted: #3a2a2c;
 
@@ -20,14 +24,14 @@
   --cream: #e8dfd2;
 
   /* Red Variants */
-  --red-light:  #d02b3e;
-  --red-main:  #b11226;
+  --red-light: #d02b3e;
+  --red-main: #b11226;
   --red-dark: #7a0c18;
 
   /* Gradients (SOFTER & CLEAN) */
   --red-gradient: linear-gradient(135deg,
-     #d02b3e 0%,
-       #b11226 100%);
+      #d02b3e 0%,
+      #b11226 100%);
 
 
   --hero-gradient: linear-gradient(180deg,
@@ -58,8 +62,8 @@
   color: var(--gold);
 }
 
-.logo-text span{
-    color: var(--red-main);
+.logo-text span {
+  color: var(--red-main);
 }
 
 .custom-navbar .nav-link {
@@ -92,7 +96,8 @@
 
 /* ================= HERO ================= */
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: url('hero-restaurant.jpg') center/cover no-repeat;
   position: relative;
   color: var(--foreground);
@@ -179,6 +184,8 @@
 
 /* MOBILE MENU COLORS */
 @media (max-width: 991px) {
+
+
   .navbar-collapse {
     background: var(--background);
     /* dark background for mobile menu */
@@ -222,6 +229,26 @@
   }
 }
 
+/* ================= SCROLL ARROW ================= */
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.scroll-arrow span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-bottom: 2px solid var(--gold-dark);
+  border-right: 2px solid var(--gold-dark);
+  transform: rotate(45deg);
+  margin: auto;
+}
+
 .preloader {
   position: fixed;
   inset: 0;
@@ -235,9 +262,9 @@
 /* FIRE ICON */
 .preloader-logo {
   font-size: 64px;
-  opacity: 0;                 
-  transform: scale(0.8);      
-  color: #d4b35a;             
+  opacity: 0;
+  transform: scale(0.8);
+  color: #d4b35a;
 }
 
 /* Medium screens (tablet) */
@@ -254,9 +281,10 @@
 @media (max-width: 576px) {
   .preloader-logo {
     font-size: 40px;
-    flex-direction: column;  
+    flex-direction: column;
     gap: 4px;
   }
+
   .fire-icon {
     font-size: 28px;
   }
@@ -303,6 +331,7 @@
 
 /* WRAPPER */
 .circle-wrapper {
+  max-width: 100%;
   width: 370px;
   /* 👈 bigger */
   height: 370px;
@@ -463,8 +492,8 @@
   }
 
   .story-content p {
-   text-align: justify;
-}
+    text-align: justify;
+  }
 }
 
 /* ================= EXCLUSIVE DEALS ICON THEME ================= */
@@ -568,6 +597,7 @@
 /* ================= GUEST REVIEWS ================= */
 .guest-reviews {
   padding: 100px 0;
+  overflow: hidden;
   background: linear-gradient(180deg, #120a06 0%, #1a0b0c 100%);
   color: var(--foreground);
   font-family: 'Montserrat', sans-serif;

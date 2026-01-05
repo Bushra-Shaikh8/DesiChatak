@@ -35,7 +35,7 @@ gsap.from(".hero-buttons", { opacity: 0, scale: 0.8, delay: 0.6, duration: 0.8 }
 // Scroll arrow animation
 gsap.to(".scroll-arrow span", { y: 10, opacity: 0, duration: 1, repeat: -1, ease: "power1.inOut" });
 
-// ---------------- Featured Circle Motion ----------------
+// ---------------- Featured Circle Simple Motion ----------------
 gsap.to(".circle-img", {
   scrollTrigger: {
     trigger: ".featured-modern",
@@ -43,19 +43,11 @@ gsap.to(".circle-img", {
     end: "bottom 60%",
     scrub: true
   },
-  motionPath: {
-    path: [
-      { x: 0, y: -120 },
-      { x: 120, y: 0 },
-      { x: 0, y: 120 },
-      { x: -120, y: 0 },
-      { x: 0, y: -120 }
-    ],
-    curviness: 1.5
-  },
+   y: -20,
   rotation: 360,
   ease: "none"
 });
+
 
 // ---------------- About Story ----------------
 gsap.from(".story-image", {
