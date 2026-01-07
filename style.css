@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-html, body {
+
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -20,11 +22,9 @@ html, body {
   --red-main: #b11226;
 
   --red-gradient: linear-gradient(135deg, #d02b3e 0%, #b11226 100%);
-  --hero-gradient: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(18, 10, 6, 0.9) 100%
-  );
+  --hero-gradient: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(18, 10, 6, 0.9) 100%);
 
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   --red-glow: 0 0 25px rgba(201, 74, 99, 0.35);
@@ -33,6 +33,37 @@ html, body {
   --radius: 12px;
 }
 
+.preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #140800, #000);
+  z-index: 9999;
+}
+
+/* FIRE ICON */
+.preloader-logo {
+  font-size: 64px;
+  opacity: 0;
+  transform: scale(0.8);
+  color: #d4b35a;
+}
+
+
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .preloader-logo {
+    font-size: 40px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .fire-icon {
+    font-size: 28px;
+  }
+}
 
 /* ================= NAVBAR ================= */
 .custom-navbar {
@@ -235,46 +266,6 @@ html, body {
   margin: auto;
 }
 
-.preloader {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at center, #140800, #000);
-  z-index: 9999;
-}
-
-/* FIRE ICON */
-.preloader-logo {
-  font-size: 64px;
-  opacity: 0;
-  transform: scale(0.8);
-  color: #d4b35a;
-}
-
-/* Medium screens (tablet) */
-/* @media (max-width: 992px) {
-  .preloader-logo {
-    font-size: 50px;
-  }
-  .fire-icon {
-    font-size: 36px;
-  }
-} */
-
-/* Small screens (mobile) */
-@media (max-width: 576px) {
-  .preloader-logo {
-    font-size: 40px;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .fire-icon {
-    font-size: 28px;
-  }
-}
 
 
 /* ================= FEATURED MODERN ================= */
@@ -709,9 +700,9 @@ html, body {
   }
 }
 
-/* ================= PREMIUM RESERVATION ================= */
+/* ================= RESERVATION ================= */
 .reservation-premium {
-  padding: 120px 0;
+  padding: 50px 0;
   background: radial-gradient(circle at left, #1a0b0c 0%, #000 55%);
 }
 
@@ -799,12 +790,13 @@ html, body {
 .reservation-form-card input,
 .reservation-form-card select {
   width: 100%;
-  background: transparent;
+  background: black;
   border: 1px solid var(--muted);
   padding: 12px;
   border-radius: 8px;
   color: var(--foreground);
 }
+
 
 .reservation-form-card input:focus,
 .reservation-form-card select:focus {
